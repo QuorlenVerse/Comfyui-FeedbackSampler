@@ -1,7 +1,7 @@
 # ComfyUI Feedback Sampler
-**Work in Progress** 
+Forked from pizurny/Comfyui-FeedbackSampler, Making simple alterations to add rotation_value and pan_value to the custom node. 
 
-A custom ComfyUI sampler for creating **Deforum-style zoom animations** through iterative feedback loop.
+A custom ComfyUI sampler for creating **Deforum-style zoom, pan and rotation animations** through iterative feedback loop.
 
 ![Demo](demo.gif)
 
@@ -9,7 +9,7 @@ A custom ComfyUI sampler for creating **Deforum-style zoom animations** through 
 
 ## Features
 
-- **Feedback Loop Animation** - Iterative sampling with zoom in/out
+- **Feedback Loop Animation** - Iterative sampling with zoom in/out, panning left/right, rotation
 - **LAB Color Coherence** - Deforum-inspired color matching prevents chromatic drift
 - **Anti-Blur Sharpening** - Maintains detail at low denoise values
 - **Noise Injection** - Prevents stagnation (Gaussian/Perlin)
@@ -32,7 +32,7 @@ Works with:
 1. Clone into `custom_nodes` folder:
 ```bash
 cd ComfyUI/custom_nodes/
-git clone https://github.com/pizurny/Comfyui-FeedbackSampler
+git clone https://github.com/QuorlenVerse/Comfyui-FeedbackSampler
 ```
 
 2. Install dependencies (optional, for sharpening and Perlin noise):
@@ -69,6 +69,8 @@ Find node at: **Add Node → sampling → custom → Feedback Sampler**
 | `color_coherence` | LAB | Color matching (None/LAB/RGB/HSV) |
 | `noise_amount` | 0.02 | Prevents stagnation (0-1) |
 | `sharpen_amount` | 0.1 | Anti-blur strength (0-1) |
+| `rotation_value` | 0.0 | Rotates the frame (negative 180 - positive180) |
+| `pan_value` | 0.000 | pans the frame left or right (negative 1.000 - positive 1.000) |
 
 ## Recommended Settings
 
